@@ -70,7 +70,6 @@ function TodoItem({ todo, onDelete, onTodoFinished, onEdit, isDetail }) {
         </div>
         <hr />
 
-        {/* Display inline form if editing is enabled */}
         {isEditing ? (
           <div>
             <div className="mb-3">
@@ -79,7 +78,7 @@ function TodoItem({ todo, onDelete, onTodoFinished, onEdit, isDetail }) {
                 className="form-label"
                 style={{ fontWeight: "bold" }}
               >
-                Edit Title
+                Title
               </label>
               <input
                 type="text"
@@ -95,7 +94,7 @@ function TodoItem({ todo, onDelete, onTodoFinished, onEdit, isDetail }) {
                 className="form-label"
                 style={{ fontWeight: "bold" }}
               >
-                Edit Description
+                Description
               </label>
               <textarea
                 className="form-control"
@@ -122,16 +121,15 @@ function TodoItem({ todo, onDelete, onTodoFinished, onEdit, isDetail }) {
             <p>{todo.description}</p>
             <div className="d-flex justify-content-end">
               <button
-                className="btn btn-warning me-2"
+                className="btn btn-primary me-2"
                 onClick={() => setIsEditing(true)}
               >
                 <Icon.Edit />
-                <span>Edit</span>
               </button>
 
               <button
                 onClick={() => {
-                  // eslint-disable-next-line no-undef
+                  //eslint-disable-next-line no-undef
                   Swal.fire({
                     title: "Hapus Todo",
                     text: `Apakah kamu yakin ingin mehapus todo: ${todo.title}?`,
